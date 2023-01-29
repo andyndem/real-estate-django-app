@@ -1,0 +1,20 @@
+{% extends "listings/base.html" %} 
+{% block content %}
+
+<h1 class="text-5xl text-gray-900"> Welcome to Tandem Homes</h1>
+<a href="/add-listing/" class="text-blue-500">
+     <h2>Create a New Listing</h2></a>
+  
+    {% for listing in listings %}
+<div class="px-3 py-2 bg-gray-100 rounded-sm">
+  <h3 class="text-3xl text-gray-900"><p> {{ listing.title }}</p> </h3>
+
+    <a href="{% url 'retrieve' listing.id %}" class="text-blue-500">
+     View Details
+    </a>
+</div>
+
+    {% endfor %} 
+    
+{% endblock content %}
+ 
